@@ -16,3 +16,4 @@
 /* Directive controlling where Tailwind injects responsive variations of utilities.
    By default Tailwind normally append these at the end of your stylesheet. */
 @tailwind screens;
+
