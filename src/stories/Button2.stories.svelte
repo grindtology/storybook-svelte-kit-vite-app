@@ -13,7 +13,7 @@
     sWidth: {
       control: { type: "select", options: ["w-full", "w-40", "w-20"] },
     },
-    onClick: { action: "onTap" },
+    onClick: { action: "onClick" },
   }}
 />
 

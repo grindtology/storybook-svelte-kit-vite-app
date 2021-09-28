@@ -1,31 +1,16 @@
 <script>
-  import "../styles/tailwind.css";
-  // import Button from "../stories/Button.svelte"
-  import BaseButton from "../lib/common/button/BaseButton.svelte"
+  //-----1.LIB
+    import Button from "$lib/button/_Button.svelte"
+  import {goto} from "$app/navigation"
 
-  let x = "whatever"
-  function testClick () {
-    x = "test"
-    console.log('test click')
-  }
-  
 </script>
+<!-- <svelte:body style="background-color:black;"/> -->
 
-
-<div class="flex flex-col justify-center p-4 mb-12 align-middle">
-  <h1 class="text-4xl font-light text-center text-purple-700">Welcome to SvelteKit</h1>
-
-  <p class="mt-2 mb-4 text-center">
-    Visit
-    <a
-      class="text-purple-400 hover:text-pink-700 hover:underline"
-      href="https://kit.svelte.dev"
-    >
-      kit.svelte.dev
-    </a>
-    to read the documentation.
-  </p>
-  {x}
-  <!-- <Button label="label" primary={true} backgroundColor="#c63333" size="large" onClick={() => testClick()}/> -->
-<BaseButton sIcon="home" sText="tesst" sColor="blue"  />
+<div class=" grid grid-flow-row p-3 grid-cols-2 gap-3">
+  <Button sIcon="calendar"  sText="week schedule" sSize="lg" onClick={() => goto("/schedule")} />
+  <Button sIcon="email" sText="messages" sSize="lg" onClick={() => goto("/message")} />
+  <Button sIcon="run" sText="training" sSize="lg" onClick={() => goto("/training")} />
+    <Button sIcon="person" sText="account" sSize="lg" onClick={() => goto("/account")} />
+      <Button sIcon="home" sText="music" sSize="lg" onClick={() => goto("/music")} />
+           <Button sIcon="settings" sText="settings" sSize="lg" onClick={() => goto("/settings")} />
 </div>

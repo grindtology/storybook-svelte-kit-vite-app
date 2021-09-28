@@ -1,9 +1,21 @@
 module.exports = {
   // mode: 'jit',
   purge: ['./src/**/*.svelte'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class' or false
   theme: {
-    extend: {},
+    fontFamily: {
+      DIN: ["DIN"],
+      'roboto' :['"Roboto Mono"', 'monospace'],
+    },
+    extend: {
+      fontSize: {
+        'xxs': ['0.60rem', {lineHeight:'1rem'}],
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+    },
+    
   },
   variants: {
     extend: {},

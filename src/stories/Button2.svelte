@@ -1,15 +1,15 @@
 <script>
   export let text = "..."
   export let color = ""
-  export let onTap = () => console.log("onTap Button.svelte")
+  export let onClick = () => console.log("onClick Button.svelte")
   export let disabled = false
   export let sWidth = "w-full"
   //----COMP
-  import Test from "../lib/common/Test.svelte"
-  // METHODS
+  import Test from "$lib/Test.svelte"
+  // 8.METHODS
   const tap = () => {
     if (!disabled) {
-      onTap()
+      onClick()
     }
   }
   const getColor = (color) => {
