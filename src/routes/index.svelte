@@ -1,16 +1,18 @@
 <script>
   //-----1.LIB
-    import Button from "$lib/button/_Button.svelte"
-  import {goto} from "$app/navigation"
-
+  import Button from '$lib/button/_Button.svelte'
+  import NavButton from '$lib/button/NavButton.svelte'
+  import { goto } from '$app/navigation'
+  import Test from '$lib/svg/Svg.svelte'
 </script>
+
 <!-- <svelte:body style="background-color:black;"/> -->
 
-<div class=" grid grid-flow-row p-3 grid-cols-2 gap-3">
-  <Button sIcon="calendar"  sText="week schedule" sSize="lg" onClick={() => goto("/schedule")} />
-  <Button sIcon="email" sText="messages" sSize="lg" onClick={() => goto("/message")} />
-  <Button sIcon="run" sText="training" sSize="lg" onClick={() => goto("/training")} />
-    <Button sIcon="person" sText="account" sSize="lg" onClick={() => goto("/account")} />
-      <Button sIcon="home" sText="music" sSize="lg" onClick={() => goto("/music")} />
-           <Button sIcon="settings" sText="settings" sSize="lg" onClick={() => goto("/settings")} />
+<div class="grid grid-flow-row grid-cols-2 gap-3 p-3 ">
+  <NavButton sIcon="calendar" sText="week schedule" sSize="md" onClick={() => goto('/schedule')} />
+  <NavButton sIcon="email" sText="messages" sSize="md" onClick={() => goto('/message')} />
+  <NavButton sIcon="run" sText="training" sSize="md" onClick={() => goto('/training')} />
+  <NavButton sIcon="person" sText="account" sSize="md" onClick={() => goto('/account')} />
+  <NavButton sIcon="home" sText="music" sSize="md" onClick={() => goto('/music')} />
+  <NavButton sIcon="settings" sText="settings" sSize="md" onClick={() => goto('/settings')} />
 </div>

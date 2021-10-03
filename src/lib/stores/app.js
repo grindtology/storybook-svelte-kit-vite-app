@@ -13,6 +13,18 @@ iListHeight.useLocalStorage()
 export const sTheme =  createStorage('app-sTheme', 'light')
 sTheme.useLocalStorage()
 
+export const oCol = {
+  sAppBg_l_gray: 'bg-gray-500',
+  sAppBg_d_gray: 'bg-gray-800',
+  'sBtnBorder-l-gray' : 'border-gray-500',
+  'sBtnBorder-d-gray' : 'border-gray-500',
+  'sBtnHoverBg-l-gray': 'bg-gray-200',
+  'sBtnHoverBg-d-gray': 'bg-gray-700',
+  'sText-l-gray': 'text-gray-700',
+  'sText-d-gray': 'text-gray-400',
+}
+
+
 export const oColor = createStorage('app-oColor',{
   light: {
     green: 'green-500',
@@ -20,7 +32,7 @@ export const oColor = createStorage('app-oColor',{
     red: 'red-500',
     text1: 'gray-600',
     text2: 'gray-500',
-    border: 'gray-400',
+    border: 'gray-600',
     orange: 'yellow-600',
     midGray: 'gray-600',
     darkGray: 'gray-400',

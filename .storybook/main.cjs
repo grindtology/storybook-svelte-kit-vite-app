@@ -9,6 +9,8 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx|svelte)"
   ],
   addons: [
+    //"storybook-tailwind-dark-mode",
+    "storybook-addon-outline",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-svelte-csf",
@@ -41,11 +43,14 @@ module.exports = {
   svelteOptions: {
     preprocess: require("../svelte.config.cjs").preprocess
   },
-  //  async viteFinal(config) {
-  //   config.resolve.alias = {
-  //     "@": "/.../my-app/src",
-  //   };
+   async viteFinal(config) {
+    config.resolve.alias = {
+      "$lib": path.resolve(__dirname, '../src/lib'),
+      "$stores":path.resolve(__dirname, '../src/stores'),
+      "$app": path.resolve('./.svelte-kit/dev/runtime/app'),
+      //  "$app": path.resolve(__dirname), '../.svelte-kit/runtime/app'
+    };
 
-  //   return config;
-  // }
+    return config;
+  }
 }

@@ -1,7 +1,7 @@
 <script>
   //-----1.LIB
   import Icon from '$lib/icon/_Icon.svelte'
-  import { oColor, sTheme } from '$lib/stores/app'
+  import { oColor, sTheme, oCol } from '$lib/stores/app'
   import Text2 from '$lib/text/Text2.svelte'
   //-----2.STORES
 
@@ -9,27 +9,37 @@
   const f = '_Button.svelte'
   let sHeight = ''
   let sOpacity = ''
+  let sShadow = ''
 
   //-----4.PROPS
   export let sText = 'text'
   export let bDisabled = false
+  export let bShadow = false
   export let onClick = null
-  export let sColor = 'border'
+  export let sColor = ''
   export let sIcon = ''
-  export let sPadding = 'p-2'
+  export let sType = 'btn-accent'
+
   export let sSize = ''
-  export let sWidth = 'w-full'
   export let sAlign = 'start'
 
   //-----5.DATA COMPUTED
 
   //-----6.DATA WATCH
   $: {
-    if (sSize === 'lg') {
-      sPadding = 'p-2'
+    if (sSize === 'md' || sSize === 'lg') {
+      sHeight = 'h-20'
     }
     if (bDisabled) {
-      sOpacity = 'opacity-30'
+      sOpacity = 'opacity-50'
+    }
+    if (bShadow) {
+      sShadow = 'shadow-md'
+    }
+    if (sColor) {
+      sType = ''
+    } else {
+      sType = 'btn-' + sType
     }
   }
 
@@ -42,7 +52,11 @@
   }
 </script>
 
-<button
+<!-- border-{sColor}-500 dark:border-{sColor}-500
+  text-{sColor}-500  dark:text-{sColor}-500 -->
+<!-- hover:bg-{$oColor[$sTheme].bg3} -->
+
+<!-- <button
   on:click={_onClick}
   class="{sPadding} flex items-center
   justify-{sAlign} {sHeight} {sOpacity}  {sWidth}  
@@ -50,14 +64,25 @@
    uppercase transition 
   bg-transparent border-2 
 shadow-md
-  border-{$oColor[$sTheme][sColor]}
-  text-{$oColor[$sTheme][sColor]}
-  rounded hover:bg-{$oColor[$sTheme].bg3}
+ {oCol[`sBtnBorder-l-${sColor}`]} dark:{oCol[`sBtnBorder-d-${sColor}`]}
+ {oCol[`sText-l-${sColor}`]} dark:{oCol[`sText-d-${sColor}`]}
+ hover:{oCol[`sBtnHoverBg-l-${sColor}`]} dark:hover:{oCol[`sBtnHoverBg-d-${sColor}`]}
+  rounded
   focus:outline-none">
   {#if sIcon}
     <Icon {sIcon} {sSize} sLabel={sText} />
   {:else}
     <Text2 {sText} />
   {/if}
-  <!-- <div class="pl-2 w-full text-left"> {sText}</div> -->
+</button> -->
+
+<button
+  on:click={_onClick}
+  class="btn {sType} flex justify-{sAlign} items-center
+  {sHeight} {sOpacity} {sColor} {sShadow} ">
+  {#if sIcon}
+    <Icon {sIcon} {sSize} {sText} />
+  {:else}
+    <Text2 {sText} />
+  {/if}
 </button>
