@@ -6,8 +6,8 @@
   //-----3.DATA LOCAL
   //-----4.PROPS
   export let oItem
-  export let onTap = () => {
-    console.log('Card onTap')
+  export let _onClick = () => {
+    console.log('Card onClick')
   }
 
   //-----5.DATA COMPUTED
@@ -18,7 +18,7 @@
 
 <!-- CARD -->
 <div
-  on:click={onTap()}
+  on:click={_onClick()}
   class="relative w-full rounded-sm bg-gray-200 w-100 h-full"
   style="width:250px; height:150px; box-shadow: 3px 3px 4px grey;
   background-repeat: no-repeat;

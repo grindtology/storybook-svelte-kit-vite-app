@@ -12,7 +12,9 @@
   <NavButton sIcon="calendar" sText="week schedule" sSize="md" onClick={() => goto('/schedule')} />
   <NavButton sIcon="email" sText="messages" sSize="md" onClick={() => goto('/message')} />
   <NavButton sIcon="run" sText="training" sSize="md" onClick={() => goto('/training')} />
+  <NavButton sIcon="run" sText="skills" sSize="md" onClick={() => goto('/skill')} />
   <NavButton sIcon="person" sText="account" sSize="md" onClick={() => goto('/account')} />
   <NavButton sIcon="home" sText="music" sSize="md" onClick={() => goto('/music')} />
   <NavButton sIcon="settings" sText="settings" sSize="md" onClick={() => goto('/settings')} />
+  <NavButton sIcon="settings" sText="admin" sSize="md" onClick={() => goto('/admin')} />
 </div>
