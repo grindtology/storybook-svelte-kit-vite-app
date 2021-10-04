@@ -18,7 +18,7 @@
   //-----6.DATA WATCH
 
   //-----8.METHODS
-  const _onClick1 = () => {
+  const _onClick = () => {
     console.log(f, '_onClick')
     if (!bDisabled && onClick) {
       onClick()
@@ -26,4 +26,4 @@
   }
 </script>
 
-<Button onClick={_onClick1} bShadow="true" sColor="btn-primary" {sIcon} {sText} sSize="md" />
+<Button onClick={_onClick} bShadow="true" sColor="btn-primary" {sIcon} {sText} sSize="md" />
